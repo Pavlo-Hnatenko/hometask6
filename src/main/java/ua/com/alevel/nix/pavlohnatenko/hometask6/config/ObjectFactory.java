@@ -1,19 +1,16 @@
 package ua.com.alevel.nix.pavlohnatenko.hometask6.config;
 
+import ua.com.alevel.nix.pavlohnatenko.hometask6.annotation.Value;
 import ua.com.alevel.nix.pavlohnatenko.hometask6.config.impl.JavaApplicationConfiguration;
-import ua.com.alevel.nix.solid.annotation.Value;
-import ua.com.alevel.nix.solid.service.InternetService;
-import ua.com.alevel.nix.solid.service.impl.WorkProcessServiceImpl;
-import ua.com.alevel.nix.solid.util.ResourceUtil;
+import ua.com.alevel.nix.pavlohnatenko.hometask6.service.SquadCheckerService;
+import ua.com.alevel.nix.pavlohnatenko.hometask6.service.impl.SquadQuotaCheckerServiceImpl;
+import ua.com.alevel.nix.pavlohnatenko.hometask6.util.ResourceUtil;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author Iehor Funtusov, created 26/06/2020 - 8:17 PM
- */
 public class ObjectFactory {
 
     private static ObjectFactory instance;
@@ -22,7 +19,7 @@ public class ObjectFactory {
     private ObjectFactory() {
         config = new JavaApplicationConfiguration(
                 "ua.com.alevel.nix.pavlohnatenko.hometask6",
-                new HashMap<>(Map.of(InternetService.class, WorkProcessServiceImpl.class)));
+                new HashMap<>(Map.of(SquadCheckerService.class, SquadQuotaCheckerServiceImpl.class)));
     }
 
     public static ObjectFactory getInstance() {

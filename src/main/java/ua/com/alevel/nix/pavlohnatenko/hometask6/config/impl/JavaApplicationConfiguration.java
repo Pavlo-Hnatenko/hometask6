@@ -6,9 +6,6 @@ import ua.com.alevel.nix.pavlohnatenko.hometask6.config.ApplicationConfiguration
 import java.util.Map;
 import java.util.Set;
 
-/**
- * @author Iehor Funtusov, created 26/06/2020 - 8:28 PM
- */
 public class JavaApplicationConfiguration implements ApplicationConfiguration {
 
     private Reflections scanner;

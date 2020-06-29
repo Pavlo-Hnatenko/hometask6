@@ -14,6 +14,7 @@ public class ChiefRefereeServiceImpl implements ChiefRefereeService<FootballMatc
 
     @Override
     public void startMatch(FootballMatch footballMatch) {
+
         squadCheckerService.isCorrespond();
         enforceGameLaws(footballMatch);
         assistantRefereeService.flagFoul();

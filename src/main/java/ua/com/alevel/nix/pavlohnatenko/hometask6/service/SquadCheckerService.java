@@ -1,9 +1,8 @@
-package ua.com.alevel.nix.pavlohnatenko.hometask6;
+package ua.com.alevel.nix.pavlohnatenko.hometask6.service;
 
 import ua.com.alevel.nix.pavlohnatenko.hometask6.exception.SquadException;
 
-public class SquadChecker {
-
+public class SquadCheckerService {
     private boolean complyRules = true;
 
     public void checkSquads(){

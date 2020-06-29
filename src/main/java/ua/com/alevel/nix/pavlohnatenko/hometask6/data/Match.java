@@ -1,6 +1,6 @@
 package ua.com.alevel.nix.pavlohnatenko.hometask6.data;
 
 public class Match {
-    private Team team1;
-    private Team team2;
+    private FootbalTeam footbalTeam1;
+    private FootbalTeam footbalTeam2;
 }

@@ -1,4 +1,4 @@
-package ua.com.alevel.nix.pavlohnatenko.hometask6;
+package ua.com.alevel.nix.pavlohnatenko.hometask6.exception;
 
 public class SquadException extends RuntimeException {
     public SquadException(String message) {

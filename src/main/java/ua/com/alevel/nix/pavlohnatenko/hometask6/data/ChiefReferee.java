@@ -1,18 +1,19 @@
-package ua.com.alevel.nix.pavlohnatenko.hometask6;
+package ua.com.alevel.nix.pavlohnatenko.hometask6.data;
 
-import ua.com.alevel.nix.pavlohnatenko.hometask6.data.Match;
+import ua.com.alevel.nix.pavlohnatenko.hometask6.Report;
+import ua.com.alevel.nix.pavlohnatenko.hometask6.SquadChecker;
 
-public class Referee {
+public class ChiefReferee extends AbstractReferee {
 
     SquadChecker squadChecker = new SquadChecker();
     Report report = new Report();
     FourthReferee fourthReferee = new FourthReferee();
-    Linesman linesman = new Linesman();
+    AssistantReferee assistantReferee = new AssistantReferee();
 
     public void startMatch(Match match){
         squadChecker.checkSquads();
         enforceGameLaws(match);
-        linesman.flagFoul();
+        assistantReferee.flagFoul();
         fourthReferee.allowReplacement();
         report.provideReport();
     }

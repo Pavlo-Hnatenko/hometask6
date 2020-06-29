@@ -1,19 +1,21 @@
 package ua.com.alevel.nix.pavlohnatenko.hometask6.service.impl;
 
-import ua.com.alevel.nix.pavlohnatenko.hometask6.data.FootbalTeam;
-import ua.com.alevel.nix.pavlohnatenko.hometask6.data.Match;
+import ua.com.alevel.nix.pavlohnatenko.hometask6.data.FootballMatch;
+import ua.com.alevel.nix.pavlohnatenko.hometask6.data.abstr.Match;
 import ua.com.alevel.nix.pavlohnatenko.hometask6.service.AssistantRefereeService;
+import ua.com.alevel.nix.pavlohnatenko.hometask6.service.ChiefRefereeService;
 import ua.com.alevel.nix.pavlohnatenko.hometask6.service.ReportService;
 import ua.com.alevel.nix.pavlohnatenko.hometask6.service.SquadCheckerService;
 
-public class ChiefRefereeServiceImpl {
+public class ChiefRefereeServiceImpl implements ChiefRefereeService<FootballMatch> {
     SquadCheckerService squadCheckerService = new SquadCheckerServiceImpl();
     ReportService reportService = new ReportServiceImpl();
-    AssistantRefereeService<FootbalTeam> assistantRefereeService = new AssistantRefereeServiceImpl();
+    AssistantRefereeService<FootballMatch> assistantRefereeService = new AssistantRefereeServiceImpl();
 
-    public void startMatch(Match match){
+    @Override
+    public void startMatch(FootballMatch footballMatch) {
         squadCheckerService.isCorrespond();
-        enforceGameLaws(match);
+        enforceGameLaws(footballMatch);
         assistantRefereeService.flagFoul();
         reportService.provideReport();
     }
@@ -25,4 +27,5 @@ public class ChiefRefereeServiceImpl {
         System.out.println("give a second time starting whistle");
         System.out.println("give a final whistle");
     }
+
 }
